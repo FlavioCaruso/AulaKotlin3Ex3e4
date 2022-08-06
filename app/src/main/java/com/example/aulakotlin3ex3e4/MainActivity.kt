@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,50 +22,47 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-        //Calcula o valor dos combustíveis
+        //Calcula o valor do real x o dolar e inclui o nome
         fun calcularPreco(view: View){
-            val precoAlcool = valorAlcool.text.toString()
-            val precoGasolina = valorGasolina.text.toString()
+            val real = real.text.toString()
+            val dolar = dolar.text.toString()
+            val nome = nome.text.toString()
 
-            val validarCampos = validarCampos(precoAlcool, precoGasolina)
+            val validarCampos = validarCampos(real, dolar, nome)
 
             if(validarCampos){
-                calcularMelhorPreco(precoAlcool, precoGasolina)
+                calcularValor(real, dolar)
             } else{
-                textoResult.text = "Preencha os preços primeiro!"
+                textoResult.text = "Preencha os campos primeiro!"
             }
         }
 
-        fun calcularMelhorPreco(precoAlcool : String, precoGasolina: String){
+        fun calcularValor(real : String, dolar: String){
+
+            val nome = nome.text.toString()
 
             //Transforma os valores em Double
-            val valorAlcool = precoAlcool.toDouble()
-            val valorGasolina = precoGasolina.toDouble()
+            val valorReal = real.toDouble()
+            val valorDolar = dolar.toDouble()
 
-            //Divide o valor do alcool pela gasolina
-            val resultadoPreco = valorAlcool / valorGasolina
+            //multiplica o valor do real pelo dólar
+            val resultadoPreco = valorReal * valorDolar
 
-            //Verifica se o resultado for maior que o valor proposto e retorna um resultado para o texto
-            if(resultadoPreco >= 0.7){
-                textoResult.text = "Melhor utilizar Gasolina"
-            } else{
-                textoResult.text = "Melhor utilizar Alcool"
-            }
+            textoResult.text = nome + ", o valor em dólar é: " + resultadoPreco
         }
 
-        fun validarCampos(precoAlcool: String, precoGasolina: String): Boolean {
+        fun validarCampos(real: String, dolar: String, nome: String): Boolean {
             var camposValidados: Boolean = true
 
             //Valida se os campos estao preenchidos
-            if(precoAlcool == null || precoAlcool == "") {
+            if(real == null || real == "") {
                 camposValidados = false
-            } else if(precoGasolina == null || precoGasolina == ""){
+            } else if(dolar == null || dolar == ""){
+                camposValidados = false
+            } else if(nome == null || nome == ""){
                 camposValidados = false
             }
             return camposValidados
         }
-
-
-
-
+    
 }

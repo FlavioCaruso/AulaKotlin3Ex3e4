@@ -1,65 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:paddingHorizontal="16dp"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imagem"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:srcCompat="@drawable/gas" />
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="Álcool ou Gasolina"
-        android:textSize="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Calcule valores de Real para Dólar"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        />
 
-    <TextView
-        android:id="@+id/textoVeiculo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="@string/veiculo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagem" />
+
+    <ImageView
+        android:id="@+id/imagem"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/_017px_presidential_dollar_coin_reverse" />
 
     <EditText
-        android:id="@+id/valorAlcool"
+        android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Insira o Valor do Alcool"
-        app:layout_constraintTop_toBottomOf="@+id/textoVeiculo"
-        tools:layout_editor_absoluteX="0dp" />
+        android:hint="Insira seu nome" />
     />
 
     <EditText
-        android:id="@+id/valorGasolina"
+        android:id="@+id/real"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Insira o valor da Gasolina"
-        app:layout_constraintTop_toBottomOf="@+id/valorAlcool"
-        tools:layout_editor_absoluteX="0dp" />
+        android:hint="Insira quantos reais deseja converter" />
+    />
+
+    <EditText
+        android:id="@+id/dolar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Insira o valor atual do dólar" />
     />
 
     <Button
@@ -67,11 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
-        android:text="Calcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valorGasolina" />
+        android:layout_gravity="end"
+        android:text="Calcular" />
 
     <TextView
         android:id="@+id/textoResult"
@@ -79,10 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:gravity="center"
-        android:text="@string/opcao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
+        android:text="@string/opcao" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
