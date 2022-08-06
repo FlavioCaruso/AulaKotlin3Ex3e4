@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity() {
             val valorReal = real.toDouble()
             val valorDolar = dolar.toDouble()
 
-            //multiplica o valor do real pelo dólar
-            val resultadoPreco = valorReal * valorDolar
+            //divide o valor do real pelo dólar
+            val resultadoPreco = valorReal / valorDolar
 
-            textoResult.text = nome + ", o valor em dólar é: " + resultadoPreco
+            textoResult.text = nome + ", o valor convertido é: " + resultadoPreco + " dólares"
         }
 
         fun validarCampos(real: String, dolar: String, nome: String): Boolean {
