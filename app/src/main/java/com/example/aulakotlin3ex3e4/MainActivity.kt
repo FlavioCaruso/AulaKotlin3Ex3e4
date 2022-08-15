@@ -24,12 +24,15 @@ class MainActivity : AppCompatActivity() {
 
         //Calcula o valor do real x o dolar e inclui o nome
         fun calcularPreco(view: View){
+            //Transforma em String
             val real = real.text.toString()
             val dolar = dolar.text.toString()
             val nome = nome.text.toString()
 
+            //Valida se nenhum campo está vazio
             val validarCampos = validarCampos(real, dolar, nome)
 
+            //Verifica se os campos estao preenchidos, se algum deles estiver vazio retornar uma mensagem
             if(validarCampos){
                 calcularValor(real, dolar)
             } else{
@@ -39,15 +42,17 @@ class MainActivity : AppCompatActivity() {
 
         fun calcularValor(real : String, dolar: String){
 
+            //Transforma em String
             val nome = nome.text.toString()
 
             //Transforma os valores em Double
             val valorReal = real.toDouble()
             val valorDolar = dolar.toDouble()
 
-            //divide o valor do real pelo dólar
+            //Converte o valor de real para dólar, dividindo o Real pelo Dólar
             val resultadoPreco = valorReal / valorDolar
 
+            //Retorna o resultado concatenando com o nome
             textoResult.text = nome + ", o valor convertido é: " + resultadoPreco + " dólares"
         }
 

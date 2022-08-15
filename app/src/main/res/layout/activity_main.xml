@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Insira o valor atual do dólar em Real" />
+        android:hint="Insira o valor atual do Dólar em Real" />
     />
 
     <Button
