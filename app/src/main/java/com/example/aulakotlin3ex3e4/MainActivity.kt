@@ -23,11 +23,14 @@ class MainActivity : AppCompatActivity() {
 
         //Calcula o valor dos combustíveis
         fun calcularPreco(view: View){
+            //Transforma os valores em string
             val precoAlcool = valorAlcool.text.toString()
             val precoGasolina = valorGasolina.text.toString()
 
+            //Valida se ambos os campos foram preenchidos
             val validarCampos = validarCampos(precoAlcool, precoGasolina)
 
+            //Caso algum campo não seja preenchido retorna uma mensagem
             if(validarCampos){
                 calcularMelhorPreco(precoAlcool, precoGasolina)
             } else{
@@ -55,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         fun validarCampos(precoAlcool: String, precoGasolina: String): Boolean {
             var camposValidados: Boolean = true
 
-            //Valida se os campos estao preenchidos
+            //Valida se os campos estao preenchidos, se não forem, retorna false
             if(precoAlcool == null || precoAlcool == "") {
                 camposValidados = false
             } else if(precoGasolina == null || precoGasolina == ""){
